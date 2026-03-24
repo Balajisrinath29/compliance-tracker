@@ -2,18 +2,6 @@
 
 A simple, effective web application for managing compliance tasks across multiple clients. Built with Node.js/Express backend and React frontend.
 
-## 🚀 Live Demo
-
-**[View the deployed app]** - Deployment coming soon! 
-
-**To deploy locally:**
-1. Clone the repository
-2. Follow the "Local Development" section below
-3. Visit `http://localhost:3001`
-
-**To deploy to the cloud:**
-See the "Deployment" section for Railway, Render, or Docker setup.
-
 ## ✨ Features
 
 - **Client Management**: View and select from a list of clients
