@@ -113,94 +113,6 @@ The frontend will run on `http://localhost:5173` with proxy to backend at `http:
 }
 ```
 
-## 🔌 API Endpoints
-
-### Clients
-- `GET /api/clients` - Get all clients
-
-### Tasks
-- `GET /api/clients/:clientId/tasks` - Get tasks for a specific client
-- `POST /api/tasks` - Create a new task
-- `PUT /api/tasks/:taskId` - Update task status
-
-## 🚀 Deployment
-
-### Prerequisites for Deployment
-- A free deployment service account (Railway, Render, Vercel + external backend, etc.)
-- Git repository (GitHub, GitLab, etc.)
-
-### Deploying to Railway (Recommended)
-
-1. **Push to GitHub**
-   ```bash
-   git remote add origin <your-github-repo-url>
-   git push -u origin master
-   ```
-
-2. **Deploy on Railway**
-   - Go to [Railway.app](https://railway.app)
-   - Create a new project
-   - Connect your GitHub repository
-   - Railway will auto-detect Node.js and build the project
-   - Add environment variables if needed
-   - Deploy!
-
-### Deploying to Render
-
-1. **Push to GitHub**
-   ```bash
-   git remote add origin <your-github-repo-url>
-   git push -u origin master
-   ```
-
-2. **Deploy on Render**
-   - Go to [Render.com](https://render.com)
-   - Create a new Web Service
-   - Connect your GitHub repository
-   - Set build command: `cd frontend && npm run build && cd ../backend && npm install`
-   - Set start command: `cd backend && npm start`
-   - Deploy!
-
-### Deploying with Docker
-
-This project includes Docker support for easy containerized deployment.
-
-**Prerequisites:**
-- Docker installed
-- Docker Hub account (optional, for pushing images)
-
-**Steps:**
-
-1. **Build Docker image**
-   ```bash
-   docker build -t compliance-tracker:latest .
-   ```
-
-2. **Run locally**
-   ```bash
-   docker run -p 3001:3001 compliance-tracker:latest
-   ```
-   Visit `http://localhost:3001`
-
-3. **Deploy to cloud (e.g., Railway, Heroku)**
-   - Push image to Docker Hub
-   - Deploy from Docker Hub on your chosen platform
-
-**Using Docker Compose:**
-```bash
-docker-compose up
-```
-This starts the app at `http://localhost:3001`
-
-### Deployment Checklist
-
-- [ ] Push code to GitHub
-- [ ] Choose deployment platform (Railway/Render/Docker)
-- [ ] Set production environment variables
-- [ ] Connect repository to platform
-- [ ] Deploy!
-- [ ] Test live app
-- [ ] Update `README.md` with live deployment URL
 
 ## 🗄️ Database
 
@@ -248,9 +160,6 @@ The database comes pre-populated with:
    - **Tradeoff**: Time zone issues possible; inconsistent if client clocks are off
    - **Alternative**: Calculate status on backend, send as field
 
-## 🧪 Testing
-
-The application includes seed data for testing. Sample overdue tasks are available immediately on startup.
 
 ## 📦 Project Structure
 
@@ -276,41 +185,3 @@ compliance-tracker/
 └── README.md              # This file
 ```
 
-## 🐛 Troubleshooting
-
-**Issue: "Cannot find module" errors**
-- Solution: Run `npm install` in both backend and frontend directories
-
-**Issue: Port 3001 already in use**
-- Solution: Change port in `backend/server.js` or kill existing process using the port
-
-**Issue: Frontend doesn't connect to backend**
-- Solution: Ensure backend is running on port 3001; check Vite proxy config
-
-**Issue: Database not persisting data**
-- Solution: Check file permissions; ensure `backend/` directory is writable
-
-## 📈 Future Enhancements
-
-- [ ] User authentication and authorization
-- [ ] Multiple workspace/organization support
-- [ ] Task assignment and notifications
-- [ ] Email reminders for overdue tasks
-- [ ] Export to CSV/PDF
-- [ ] Task comments and activity log
-- [ ] Recurring tasks
-- [ ] Integration with calendars (Google, Outlook)
-- [ ] Advanced reporting and analytics
-- [ ] Mobile app
-
-## 📄 License
-
-ISC
-
-## 👥 Author
-
-Built as a compliance tracking solution for LedgersCFO teams.
-
----
-
-**Questions or issues?** Please open an issue in the repository.
