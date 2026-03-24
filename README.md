@@ -4,7 +4,15 @@ A simple, effective web application for managing compliance tasks across multipl
 
 ## 🚀 Live Demo
 
-**[View the deployed app](#)** (Deployment link will be added after deployment)
+**[View the deployed app]** - Deployment coming soon! 
+
+**To deploy locally:**
+1. Clone the repository
+2. Follow the "Local Development" section below
+3. Visit `http://localhost:3001`
+
+**To deploy to the cloud:**
+See the "Deployment" section for Railway, Render, or Docker setup.
 
 ## ✨ Features
 
@@ -164,6 +172,47 @@ The frontend will run on `http://localhost:5173` with proxy to backend at `http:
    - Set build command: `cd frontend && npm run build && cd ../backend && npm install`
    - Set start command: `cd backend && npm start`
    - Deploy!
+
+### Deploying with Docker
+
+This project includes Docker support for easy containerized deployment.
+
+**Prerequisites:**
+- Docker installed
+- Docker Hub account (optional, for pushing images)
+
+**Steps:**
+
+1. **Build Docker image**
+   ```bash
+   docker build -t compliance-tracker:latest .
+   ```
+
+2. **Run locally**
+   ```bash
+   docker run -p 3001:3001 compliance-tracker:latest
+   ```
+   Visit `http://localhost:3001`
+
+3. **Deploy to cloud (e.g., Railway, Heroku)**
+   - Push image to Docker Hub
+   - Deploy from Docker Hub on your chosen platform
+
+**Using Docker Compose:**
+```bash
+docker-compose up
+```
+This starts the app at `http://localhost:3001`
+
+### Deployment Checklist
+
+- [ ] Push code to GitHub
+- [ ] Choose deployment platform (Railway/Render/Docker)
+- [ ] Set production environment variables
+- [ ] Connect repository to platform
+- [ ] Deploy!
+- [ ] Test live app
+- [ ] Update `README.md` with live deployment URL
 
 ## 🗄️ Database
 
