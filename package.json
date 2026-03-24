@@ -1,0 +1,21 @@
+{
+  "name": "compliance-tracker",
+  "version": "1.0.0",
+  "description": "A simple compliance task tracker for managing client compliance tasks",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build && cd ../backend",
+    "build:backend": "cd backend && npm install",
+    "build:frontend": "cd frontend && npm install && npm run build",
+    "start": "cd backend && npm start"
+  },
+  "keywords": ["compliance", "task-tracker", "clients"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
